@@ -2,18 +2,51 @@
 
 body {
   background-image: url(https://images.unsplash.com/photo-1503756234508-e32369269deb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG9jZWFuJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww);
-  background-size: cover; 
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
 
-h2 {
+/* Contenedor padre para alinear arriba y centrar horizontal */
+.contenedor-centro {
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: flex-start; /* alinea arriba verticalmente */
+  flex-wrap: nowrap; /* para que no se apilen */
+  height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  gap: 20px; /* espacio entre elementos */
+}
+
+h2, .titulo {
   color: #49b4a6;
   font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+p, .titulo {
+  color: #49b4a6;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+p:hover {
+  color: #112926;
+  animation: twist 1s forwards ease-in-out;
 }
 h2:hover {
   color: #112926;
-  cursor: pointer;
   animation: twist 1s forwards ease-in-out;
 }
+
 .takanakas img {
   width: 400px;
   height: 400px;
@@ -24,7 +57,7 @@ h2:hover {
     transform: rotate(0);
   }
   50% {
-    scale: 1.5;
+    transform: scale(1.5);
   }
   100% {
     transform: rotate(360deg);
@@ -42,6 +75,7 @@ h2:hover {
     transform: translateY(0);
   }
 }
+
 @keyframes flying-mirrored {
   0% {
     transform: translateY(0) rotateY(180deg);
@@ -90,11 +124,14 @@ h2:hover {
   background-position: center;
   border-radius: 10px;
   border: 2px solid black;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .caja:hover {
-  scale: 1.05;
+  transform: scale(1.05);
 }
+
 #domainGenerator {
   margin-top: 20px;
   padding: 20px;
@@ -102,8 +139,37 @@ h2:hover {
   color: #f1fefc;
   font-family: "Courier New", Courier, monospace;
   transition: 1s;
-  cursor: url("https://icons.iconarchive.com/icons/google/noto-emoji-objects/72/62809-guitar-icon.png")
-      16 16, auto;
+  cursor: url("https://icons.iconarchive.com/icons/google/noto-emoji-objects/72/62809-guitar-icon.png") 16 16, auto;
   overflow: scroll;
   height: 600px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media  (min-width:767px) and (max-width: 900px) {
+  .contenedor-centro {
+    flex-wrap: wrap;
+    align-items: flex-start;  /* importante: que se alinee arriba */
+    justify-content: center;  /* que quede centrado horizontal */
+    height: auto;             /* quitar el height fijo */
+    padding-top: 20px; 
+  }
+  .takanaka1 {
+    display: none;
+  }
+  .takanaka2{
+    display: none;
+  }
+  .cajaDomains{
+    margin-top: 400px;
+  }
+  .caja {
+    width: 250px;
+  }
+
+}
+@media (max-width: 900px){
+   .caja2{
+    margin-top: -400px;
+  }
+ 
 }
