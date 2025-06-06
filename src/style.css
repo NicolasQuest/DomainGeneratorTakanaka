@@ -1,0 +1,109 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1503756234508-e32369269deb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG9jZWFuJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww);
+  background-size: cover; 
+}
+
+h2 {
+  color: #49b4a6;
+  font-family: "Courier New", Courier, monospace;
+}
+h2:hover {
+  color: #112926;
+  cursor: pointer;
+  animation: twist 1s forwards ease-in-out;
+}
+.takanakas img {
+  width: 400px;
+  height: 400px;
+}
+
+@keyframes twist {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    scale: 1.5;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flying {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(400px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes flying-mirrored {
+  0% {
+    transform: translateY(0) rotateY(180deg);
+  }
+  50% {
+    transform: translateY(400px) rotateY(180deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(180deg);
+  }
+}
+
+.takanaka1 {
+  animation: flying 5s infinite ease-in-out;
+}
+
+.takanaka2 {
+  animation: flying-mirrored 5s infinite ease-in-out;
+}
+
+.titulo:hover {
+  animation: buzzing 0.5s forwards;
+  cursor: pointer;
+}
+
+@keyframes buzzing {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(20px);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.caja {
+  background-image: url(https://preview.redd.it/masayoshi-takanaka-wallpapers-v0-d8vpd1mvwiie1.jpg?width=640&crop=smart&auto=webp&s=e9b2aedf2f871baaeffbb286c37e69324f867c83);
+  background-size: cover;
+  width: 300px;
+  height: auto;
+  background-position: center;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.caja:hover {
+  scale: 1.05;
+}
+#domainGenerator {
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 16px;
+  color: #f1fefc;
+  font-family: "Courier New", Courier, monospace;
+  transition: 1s;
+  cursor: url("https://icons.iconarchive.com/icons/google/noto-emoji-objects/72/62809-guitar-icon.png")
+      16 16, auto;
+  overflow: scroll;
+  height: 600px;
+}
